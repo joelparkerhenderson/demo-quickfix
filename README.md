@@ -136,6 +136,41 @@ make
 ```
 
 
+## Make check
+
+Run tests:
+
+```sh
+make check
+```
+
+If you any errors, such as:
+
+```
+# FAIL:  1
+...
+See test/test-suite.log
+```
+
+Then check them:
+
+```sh
+cat test/test-suite.log
+... 
+ut: no process found
+at: no process found
+<ut>
+  <output>
+C++/test/FieldConvertorsTestCase.cpp:114: error: Failure in integerConvertTo: Expected -2147483648 but was -00
+FAILURE: 1 out of 186 tests failed (1 failures).
+Test time: 10.81 seconds.
+  </output>
+</ut>
+```
+
+We do not currently have a solution for this. Blog posts we've found report multiple problems with quickfix number handling.
+
+
 ## Install
 
 Run:
